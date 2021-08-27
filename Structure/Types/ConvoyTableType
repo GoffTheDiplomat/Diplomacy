@@ -1,0 +1,19 @@
+USE Dagger
+GO
+
+CREATE TYPE [ConvoyTable] AS TABLE(
+	[OriginProvinceID] [int] NOT NULL,
+	[DestinationProvinceID] [int] NOT NULL,
+	[ConvoyingProvince1ID] [int] NOT NULL,
+	[ConvoyingProvince2ID] [int] NULL,
+	[ConvoyingProvince3ID] [int] NULL,
+	[ConvoyingProvince4ID] [int] NULL,
+	[ConvoyingProvince5ID] [int] NULL,
+	[ConvoyingProvince6ID] [int] NULL,
+	[ConvoyingProvince7ID] [int] NULL,
+	[ConvoyingProvince8ID] [int] NULL,
+	[ConvoyingProvince9ID] [int] NULL
+)
+GO
+
+
