@@ -1,0 +1,26 @@
+USE Dagger
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE FUNCTION [dbo].[PopulatePositions]
+(	
+	@TurnID int
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+SELECT *
+     , 0 as PossibleSupports
+	 , 0 as ConfirmedSupports
+	 , 0 as MoveStatus
+  FROM Positions  
+ WHERE TurnID = @TurnID
+)
+GO
