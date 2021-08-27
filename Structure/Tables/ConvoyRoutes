@@ -1,0 +1,25 @@
+USE Dagger
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [CovoyRoutes](
+	[OriginProvinceID] [int] NOT NULL,
+	[Convoy1ProvinceID] [int] NOT NULL,
+	[Convoy2ProvinceID] [int] NULL,
+	[Convoy3ProvinceID] [int] NULL,
+	[Convoy4ProvinceID] [int] NULL,
+	[Convoy5ProvinceID] [int] NULL,
+	[Convoy6ProvinceID] [int] NULL,
+	[Convoy7ProvinceID] [int] NULL,
+	[Convoy8ProvinceID] [int] NULL,
+	[Convoy9ProvinceID] [int] NULL,
+	[DestinationProvinceID] [int] NOT NULL
+) ON [PRIMARY]
+GO
+
+
