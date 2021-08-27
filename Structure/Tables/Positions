@@ -1,0 +1,25 @@
+USE Dagger
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Positions](
+	[PositionID] [int] IDENTITY(1,1) NOT NULL,
+	[TurnID] [int] NOT NULL,
+	[CountryID] [int] NOT NULL,
+	[UnitTypeID] [int] NOT NULL,
+	[ProvinceID] [int] NOT NULL,
+	[OrderTypeID] [int] NULL,
+	[DestinationProvinceID] [int] NULL,
+	[SupportDestinationProvinceID] [int] NULL,
+	[OrderOutcomeID] [int] NULL,
+ CONSTRAINT [PK_Positions] PRIMARY KEY CLUSTERED 
+(
+	[PositionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
