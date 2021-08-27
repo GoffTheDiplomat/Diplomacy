@@ -1,0 +1,20 @@
+USE Dagger
+GO
+
+CREATE TYPE [PositionTable] AS TABLE(
+	[PositionID] [int] NOT NULL,
+	[TurnID] [int] NOT NULL,
+	[CountryID] [int] NOT NULL,
+	[UnitTypeID] [int] NOT NULL,
+	[ProvinceID] [int] NOT NULL,
+	[OrderTypeID] [int] NULL,
+	[DestinationProvinceID] [int] NULL,
+	[SupportDestinationProvinceID] [int] NULL,
+	[OrderOutcomeID] [int] NULL,
+	[PossibleSupports] [int] NULL,
+	[ConfirmedSupports] [int] NULL,
+	[MoveStatus] [int] NULL
+)
+GO
+
+
