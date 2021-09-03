@@ -1,0 +1,29 @@
+USE Dagger 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION PopulatePossibleConvoys
+(@Position positiontable readonly)
+
+RETURNS TABLE 
+AS
+RETURN 
+(
+		SELECT DISTINCT C.*
+	  FROM ConvoyRoutes AS C
+INNER JOIN @Position	AS P0 on C.OriginProvinceID = P0.PositionID and P0.UnitTypeID = 1 
+INNER JOIN @Position	AS P1 on C.ConvoyingProvince1ID = P1.ProvinceID
+INNER JOIN @Position	AS P2 on C.ConvoyingProvince2ID is null or (C.ConvoyingProvince2ID = P2.ProvinceID)
+INNER JOIN @Position	AS P3 on C.ConvoyingProvince3ID is null or (C.ConvoyingProvince3ID = P3.ProvinceID)
+INNER JOIN @Position	AS P4 on C.ConvoyingProvince4ID is null or (C.ConvoyingProvince4ID = P4.ProvinceID)
+INNER JOIN @Position	AS P5 on C.ConvoyingProvince5ID is null or (C.ConvoyingProvince5ID = P5.ProvinceID)
+INNER JOIN @Position	AS P6 on C.ConvoyingProvince6ID is null or (C.ConvoyingProvince6ID = P6.ProvinceID)
+INNER JOIN @Position	AS P7 on C.ConvoyingProvince7ID is null or (C.ConvoyingProvince7ID = P7.ProvinceID)
+INNER JOIN @Position	AS P8 on C.ConvoyingProvince8ID is null or (C.ConvoyingProvince8ID = P8.ProvinceID)
+INNER JOIN @Position	AS P9 on C.ConvoyingProvince9ID is null or (C.ConvoyingProvince9ID = P9.ProvinceID)
+)
+GO
