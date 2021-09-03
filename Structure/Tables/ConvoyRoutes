@@ -7,17 +7,17 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE TABLE [CovoyRoutes](
+CREATE TABLE [ConvoyRoutes](
 	[OriginProvinceID] [int] NOT NULL,
-	[Convoy1ProvinceID] [int] NOT NULL,
-	[Convoy2ProvinceID] [int] NULL,
-	[Convoy3ProvinceID] [int] NULL,
-	[Convoy4ProvinceID] [int] NULL,
-	[Convoy5ProvinceID] [int] NULL,
-	[Convoy6ProvinceID] [int] NULL,
-	[Convoy7ProvinceID] [int] NULL,
-	[Convoy8ProvinceID] [int] NULL,
-	[Convoy9ProvinceID] [int] NULL,
+	[Convoying1ProvinceID] [int] NOT NULL,
+	[Convoying2ProvinceID] [int] NULL,
+	[Convoying3ProvinceID] [int] NULL,
+	[Convoying4ProvinceID] [int] NULL,
+	[Convoying5ProvinceID] [int] NULL,
+	[Convoying6ProvinceID] [int] NULL,
+	[Convoying7ProvinceID] [int] NULL,
+	[Convoying8ProvinceID] [int] NULL,
+	[Convoying9ProvinceID] [int] NULL,
 	[DestinationProvinceID] [int] NOT NULL
 ) ON [PRIMARY]
 GO
