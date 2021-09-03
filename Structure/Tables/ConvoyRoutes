@@ -9,15 +9,15 @@ GO
 
 CREATE TABLE [ConvoyRoutes](
 	[OriginProvinceID] [int] NOT NULL,
-	[Convoying1ProvinceID] [int] NOT NULL,
-	[Convoying2ProvinceID] [int] NULL,
-	[Convoying3ProvinceID] [int] NULL,
-	[Convoying4ProvinceID] [int] NULL,
-	[Convoying5ProvinceID] [int] NULL,
-	[Convoying6ProvinceID] [int] NULL,
-	[Convoying7ProvinceID] [int] NULL,
-	[Convoying8ProvinceID] [int] NULL,
-	[Convoying9ProvinceID] [int] NULL,
+	[ConvoyingProvince1ID] [int] NOT NULL,
+	[ConvoyingProvince2ID] [int] NULL,
+	[ConvoyingProvince3ID] [int] NULL,
+	[ConvoyingProvince4ID] [int] NULL,
+	[ConvoyingProvince5ID] [int] NULL,
+	[ConvoyingProvince6ID] [int] NULL,
+	[ConvoyingProvince7ID] [int] NULL,
+	[ConvoyingProvince8ID] [int] NULL,
+	[ConvoyingProvince9ID] [int] NULL,
 	[DestinationProvinceID] [int] NOT NULL
 ) ON [PRIMARY]
 GO
