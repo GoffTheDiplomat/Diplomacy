@@ -1,0 +1,37 @@
+USE Dagger 
+GO
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE FUNCTION PopulateOrderedConvoys
+(@Position positiontable readonly, @PossibleConvoys convoytable readonly)
+
+RETURNS TABLE 
+AS
+RETURN 
+(
+		SELECT Distinct C.* 
+	  FROM @PossibleConvoys AS C
+INNER JOIN @Position		AS P0 on C.OriginProvinceID = P0.ProvinceID and C.DestinationProvinceID = P0.DestinationProvinceID and P0.OrderTypeID in (2,8,9,10) 
+INNER JOIN @Position		AS P1 on (C.ConvoyingProvince1ID = P1.ProvinceID 
+									  AND C.OriginProvinceID = P1.DestinationProvinceID 
+									  AND C.DestinationProvinceID = P1.SupportDestinationProvinceID 
+									  AND P1.OrderTypeID = 5)
+INNER JOIN @Position		AS P2 on C.ConvoyingProvince2ID is null 
+								  or	(C.ConvoyingProvince2ID = P2.ProvinceID 
+										AND C.OriginProvinceID = P2.DestinationProvinceID 
+										AND C.DestinationProvinceID = P2.SupportDestinationProvinceID 
+										AND P2.OrderTypeID = 5)
+INNER JOIN @Position		AS P3 on C.ConvoyingProvince3ID is null or (C.ConvoyingProvince3ID = P3.ProvinceID AND C.OriginProvinceID = P3.DestinationProvinceID AND C.DestinationProvinceID = P3.SupportDestinationProvinceID AND P3.OrderTypeID = 5)
+INNER JOIN @Position		AS P4 on C.ConvoyingProvince4ID is null or (C.ConvoyingProvince4ID = P4.ProvinceID AND C.OriginProvinceID = P4.DestinationProvinceID AND C.DestinationProvinceID = P4.SupportDestinationProvinceID AND P4.OrderTypeID = 5)
+INNER JOIN @Position		AS P5 on C.ConvoyingProvince5ID is null or (C.ConvoyingProvince5ID = P5.ProvinceID AND C.OriginProvinceID = P5.DestinationProvinceID AND C.DestinationProvinceID = P5.SupportDestinationProvinceID AND P5.OrderTypeID = 5)
+INNER JOIN @Position		AS P6 on C.ConvoyingProvince6ID is null or (C.ConvoyingProvince6ID = P6.ProvinceID AND C.OriginProvinceID = P6.DestinationProvinceID AND C.DestinationProvinceID = P6.SupportDestinationProvinceID AND P6.OrderTypeID = 5)
+INNER JOIN @Position		AS P7 on C.ConvoyingProvince7ID is null or (C.ConvoyingProvince7ID = P7.ProvinceID AND C.OriginProvinceID = P7.DestinationProvinceID AND C.DestinationProvinceID = P7.SupportDestinationProvinceID AND P7.OrderTypeID = 5)
+INNER JOIN @Position		AS P8 on C.ConvoyingProvince8ID is null or (C.ConvoyingProvince8ID = P8.ProvinceID AND C.OriginProvinceID = P8.DestinationProvinceID AND C.DestinationProvinceID = P8.SupportDestinationProvinceID AND P8.OrderTypeID = 5)
+INNER JOIN @Position		AS P9 on C.ConvoyingProvince9ID is null or (C.ConvoyingProvince9ID = P9.ProvinceID AND C.OriginProvinceID = P9.DestinationProvinceID AND C.DestinationProvinceID = P9.SupportDestinationProvinceID AND P9.OrderTypeID = 5)
+
+)
+GO
